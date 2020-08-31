@@ -27,54 +27,54 @@ def run(protocol: protocol_api.ProtocolContext):
     count = 0
     
 #     For A5 (Step requires at least 136uL of sample)
-#    p10.pick_up_tip()
-#    for r in range(8):
-#        p10.distribute(2, Falcon['A5'], plate.columns()[r][0:8], new_tip='never') #,disposal_volume = 0)           
-#    p10.drop_tip()
+    p10.pick_up_tip()
+    for r in range(8):
+        p10.distribute(2, Falcon['A5'], plate.columns()[r][0:8], new_tip='never') #,disposal_volume = 0)           
+    p10.drop_tip()
     
 #     For B5 (Step requires at least 136uL of sample)
-#    p10.pick_up_tip()
-#    for r in range(8):
-#        p10.distribute(2, Falcon['B5'], plate.columns()[r][0:8], new_tip='never') #,disposal_volume = 0)           
-#    p10.drop_tip()
+    p10.pick_up_tip()
+    for r in range(8):
+        p10.distribute(2, Falcon['B5'], plate.columns()[r][0:8], new_tip='never') #,disposal_volume = 0)           
+    p10.drop_tip()
             
     #for A 
-#    while i<(n+1):
-#        p10.pick_up_tip()
-#        for r in range(n):
-#            if i > 2:
-#                if i % 2 != 0:
-#                    p10.distribute(2, Falcon["A"+ str(i)], plate.columns()[r + n][0:n], 
-#                            new_tip = 'never')
-#                else:
-#                        p10.distribute(2, Falcon["A"+ str(i)], plate.columns()[r + n][n:2*n], 
-#                             new_tip = 'never')
-#            elif i % 2 == 0:
-#                p10.distribute(2, Falcon["A"+ str(i)], plate.columns()[r][n:n*2], 
-#                             new_tip = 'never')
-#            else:
-#                p10.distribute(2, Falcon["A"+ str(i)], plate.columns()[r][0:n], 
-#                         new_tip = 'never')
-#        i += 1
-#        p10.drop_tip()
+    while i<(n+1):
+        p10.pick_up_tip()
+        for r in range(n):
+            if i > 2:
+                if i % 2 != 0:
+                    p10.distribute(2, Falcon["A"+ str(i)], plate.columns()[r + n][0:n], 
+                            new_tip = 'never')
+                else:
+                        p10.distribute(2, Falcon["A"+ str(i)], plate.columns()[r + n][n:2*n], 
+                             new_tip = 'never')
+            elif i % 2 == 0:
+                p10.distribute(2, Falcon["A"+ str(i)], plate.columns()[r][n:n*2], 
+                             new_tip = 'never')
+            else:
+                p10.distribute(2, Falcon["A"+ str(i)], plate.columns()[r][0:n], 
+                         new_tip = 'never')
+        i += 1
+        p10.drop_tip()
 
 
-    # For B
-#    while i<(n+1):
-#        p10.distribute(2, Falcon['B' + str(i)], plate.rows()[count][0:n], 
-#                              new_tip = 'always')
-#        p10.distribute(2, Falcon['B' + str(i)], plate.rows()[count+n][0:n], 
-#                              new_tip = 'always')
-#        p10.distribute(2, Falcon['B' + str(i)], plate.rows()[count][n:n*2], 
-#                              new_tip = 'always')
-#        p10.distribute(2, Falcon['B' + str(i)], plate.rows()[count+n][n:n*2], 
-#                              new_tip = 'always')
-#        i += 1
-#        count += 1
+    #For B
+    while i<(n+1):
+        p10.distribute(2, Falcon['B' + str(i)], plate.rows()[count][0:n], 
+                              new_tip = 'always')
+        p10.distribute(2, Falcon['B' + str(i)], plate.rows()[count+n][0:n], 
+                              new_tip = 'always')
+        p10.distribute(2, Falcon['B' + str(i)], plate.rows()[count][n:n*2], 
+                              new_tip = 'always')
+        p10.distribute(2, Falcon['B' + str(i)], plate.rows()[count+n][n:n*2], 
+                              new_tip = 'always')
+        i += 1
+        count += 1
 
  
 
-# For C      
+    #For C      
     while i < (n+1): 
         p10.transfer(2, Falcon['C' + str(i)], plate.columns()[count][0:n*2], 
                                   new_tip = 'always', blow_out = True)
