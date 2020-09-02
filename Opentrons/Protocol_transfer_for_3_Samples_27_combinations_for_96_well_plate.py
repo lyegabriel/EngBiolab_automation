@@ -31,18 +31,14 @@ def run(protocol: protocol_api.ProtocolContext):
     
 #     For D1 (Assembly Master Mix)
     p10.pick_up_tip()
-    for r in range(2*n):
-        p10.distribute(2, Falcon['D1'], plate1.columns()[r][0:n], new_tip='never') ,disposal_volume = 0)
-        p10.distribute(2, Falcon['D1'], plate2.columns()[r][0:n], new_tip='never') ,disposal_volume = 0)  
-        p10.distribute(2, Falcon['D1'], plate3.columns()[r][0:n], new_tip='never') ,disposal_volume = 0)  
+    for r in range(3*n):
+        p10.distribute(2, Falcon['D1'], plate.columns()[r][0:n], new_tip='never' ,disposal_volume = 0)  
     p10.drop_tip()
     
 #     For D2 (Backbone+pLac)
     p10.pick_up_tip()
-    for r in range(2*n):
-        p10.distribute(2, Falcon['D2'], plate1.columns()[r][0:n], new_tip='never') ,disposal_volume = 0)
-        p10.distribute(2, Falcon['D2'], plate2.columns()[r][0:n], new_tip='never') ,disposal_volume = 0)  
-        p10.distribute(2, Falcon['D2'], plate3.columns()[r][0:n], new_tip='never') ,disposal_volume = 0)  
+    for r in range(3*n):
+        p10.distribute(2, Falcon['D2'], plate.columns()[r][0:n], new_tip='never' ,disposal_volume = 0) 
     p10.drop_tip()
             
     #for A 
@@ -87,7 +83,7 @@ def run(protocol: protocol_api.ProtocolContext):
                               new_tip = 'always', blow_out = True)
 
         i_C += 1
-        count +=1
+        count_C +=1
         
 
     
